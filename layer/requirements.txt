@@ -4,7 +4,7 @@ beartype
 dataclasses-jsonschema
 pycognito
 nicHelper
-ujson
+ujson==5.3.0
 pynamodb-dax
 pydantic
 lambdasdk

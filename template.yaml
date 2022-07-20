@@ -17,11 +17,9 @@ Globals:
       - subnet-0ca9ad2cd96fccccc
     Environment:
       Variables:
-        DAX_ENDPOINT: 'longtermcluster.vuu7lr.clustercfg.dax.apse1.cache.amazonaws.com:8111'
-        DATABASE_TABLE_NAME: !Join ['-', [ "product-table" , !Ref BRANCH ]]
+        USERTABLENAME: !Join ['-', ['usertable', 'test', !Ref BRANCH]]
         REGION: !Ref REGION
         BRANCH: !Ref BRANCH
-        SCHEMAURL: ''
       
       
 Parameters: 
@@ -52,18 +50,37 @@ Resources:
   HelloWorld:
     Type: AWS::Serverless::Function 
     Properties:
-      FunctionName: !Join ['-',[ "helloworld",!Ref BRANCH ]]
+      FunctionName: !Join ['-',[ "helloworld", 'function', !Ref BRANCH ]]
       Handler: app.helloworld
+      MemorySize: 3008
       Policies:
         - arn:aws:iam::394922924679:policy/villaDaxPolicy
       Events:
         GetProduct:
           Type: Api 
           Properties:
-            Path: /get
+            Path: /helloworld
             Method: get
             RestApiId: !Ref Endpoint
-            
+      
+      
+      
+  ###### dynamodb table #####
+  UserTable:
+    Type: AWS::DynamoDB::Table
+    Properties: 
+      AttributeDefinitions:
+        - AttributeName: userId
+          AttributeType: N 
+        - AttributeName: username
+          AttributeType: S
+        - AttributeName: date
+          AttributeType: N
+      KeySchema:
+        - AttributeName: userId
+          KeyType: HASH
+      TableName: !Join ['-', ['usertable', 'test', !Ref BRANCH]]
+      BillingMode: PAY_PER_REQUEST
 
 ###### lambdaLayer ######
 
