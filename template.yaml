@@ -59,7 +59,7 @@ Resources:
       
       
   ###### dynamodb table #####
-  UserTable:
+  UserTableChap:
     Type: AWS::DynamoDB::Table
     Properties: 
       AttributeDefinitions:
