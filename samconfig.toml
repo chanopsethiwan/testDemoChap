@@ -3,7 +3,7 @@ version = 0.1
 [default.deploy]
 [default.deploy.parameters]
 stack_name = "testdemochap-master"
-s3_bucket = "test1-bucket"
-s3_prefix = "testdemochap"
+s3_bucket = "hi"
+s3_prefix = "hi"
 region = "ap-southeast-1"
 capabilities = "CAPABILITY_IAM"
