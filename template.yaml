@@ -42,7 +42,7 @@ Resources:
         AllowOrigin: "'*'"
         
   ######## functions ######
-  HelloWorld:
+  HelloWorldChap:
     Type: AWS::Serverless::Function 
     Properties:
       FunctionName: !Join ['-',[ "helloworldchap", 'function', !Ref BRANCH ]]
@@ -52,7 +52,7 @@ Resources:
         GetProduct:
           Type: Api 
           Properties:
-            Path: /helloworld
+            Path: /helloworldchap
             Method: get
             RestApiId: !Ref Endpoint
       
