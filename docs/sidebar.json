@@ -1,8 +1,10 @@
 {
   "src": {
     "Overview": "/",
-    "get": "get.html",
+    "get": "createUser.html",
+    "GetEnv": "getEnv.html",
     "helloworld": "helloWorld.html",
-    "Table": "table.html"
+    "SetEnv": "setEnv.html",
+    "UserTable": "userTable.html"
   }
 }

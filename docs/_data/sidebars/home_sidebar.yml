@@ -11,13 +11,19 @@ entries:
       url: /
     - output: web,pdf
       title: get
-      url: get.html
+      url: createUser.html
+    - output: web,pdf
+      title: GetEnv
+      url: getEnv.html
     - output: web,pdf
       title: helloworld
       url: helloWorld.html
     - output: web,pdf
-      title: Table
-      url: table.html
+      title: SetEnv
+      url: setEnv.html
+    - output: web,pdf
+      title: UserTable
+      url: userTable.html
     output: web
     title: src
   output: web

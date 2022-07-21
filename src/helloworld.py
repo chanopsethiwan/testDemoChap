@@ -7,5 +7,5 @@ from awsSchema.apigateway import Event, Response
 
 # Cell
 def helloworld(event, *args):
-  print(Event.parseBody(event))
-  return Response.returnSuccess()
+    print(Event.parseBody(event))
+    return Response.returnSuccess()

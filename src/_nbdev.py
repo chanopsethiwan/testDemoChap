@@ -2,9 +2,12 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"helloworld": "helloWorld.ipynb"}
+index = {"USERTABLENAME": "getEnv.ipynb",
+         "helloworld": "helloWorld.ipynb"}
 
-modules = ["helloworld.py"]
+modules = ["getEnv.py",
+           "helloworld.py",
+           "userTable.py"]
 
 doc_url = "https://thanakijwanavit.github.io/src/"
 
