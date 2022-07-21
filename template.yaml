@@ -52,7 +52,7 @@ Resources:
         GetProduct:
           Type: Api 
           Properties:
-            Path: /helloWorld
+            Path: /helloworld
             Method: get
             RestApiId: !Ref Endpoint
       
