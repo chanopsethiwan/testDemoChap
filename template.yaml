@@ -45,7 +45,7 @@ Resources:
   HelloWorld:
     Type: AWS::Serverless::Function 
     Properties:
-      FunctionName: !Join ['-',[ "helloworld", 'function', !Ref BRANCH ]]
+      FunctionName: !Join ['-',[ "helloworldchap", 'function', !Ref BRANCH ]]
       Handler: app.helloworld
       MemorySize: 3008
       Events:
@@ -72,7 +72,7 @@ Resources:
       KeySchema:
         - AttributeName: userId
           KeyType: HASH
-      TableName: !Join ['-', ['usertable', 'test', !Ref BRANCH]]
+      TableName: !Join ['-', ['usertablechap', 'test', !Ref BRANCH]]
       BillingMode: PAY_PER_REQUEST
 
 ###### lambdaLayer ######
