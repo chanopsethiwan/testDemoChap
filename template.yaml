@@ -10,11 +10,6 @@ Globals:
     Runtime: python3.8
     Layers:
       - !Ref LambdaLayer
-    VpcConfig:
-      SecurityGroupIds:
-      - sg-73dae500
-      SubnetIds:
-      - subnet-0ca9ad2cd96fccccc
     Environment:
       Variables:
         USERTABLENAME: !Join ['-', ['usertable', 'test', !Ref BRANCH]]
@@ -57,7 +52,7 @@ Resources:
         GetProduct:
           Type: Api 
           Properties:
-            Path: /helloworld
+            Path: /helloWorld
             Method: get
             RestApiId: !Ref Endpoint
       
