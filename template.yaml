@@ -53,8 +53,6 @@ Resources:
       FunctionName: !Join ['-',[ "helloworld", 'function', !Ref BRANCH ]]
       Handler: app.helloworld
       MemorySize: 3008
-      Policies:
-        - arn:aws:iam::394922924679:policy/villaDaxPolicy
       Events:
         GetProduct:
           Type: Api 
