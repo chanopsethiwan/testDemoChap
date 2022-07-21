@@ -88,7 +88,7 @@ Resources:
     Properties: 
       AccelerateConfiguration: 
         AccelerationStatus: Enabled
-      BucketName: !Join ['-', ['test1', 'bucket', 'chap']]
+      BucketName: !Join ['-', ['test2', 'bucket', 'chap']]
 ###### lambdaLayer ######
 
   LambdaLayer:
