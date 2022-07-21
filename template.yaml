@@ -82,6 +82,13 @@ Resources:
       TableName: !Join ['-', ['usertablechap', 'test', !Ref BRANCH]]
       BillingMode: PAY_PER_REQUEST
 
+##### s3 ########
+  ExampleS3:
+    Type: AWS::S3::Bucket
+    Properties: 
+      AccelerateConfiguration: 
+        AccelerationStatus: Enabled
+      BucketName: !Join ['-', ['userbucketchap', 'test', !Ref BRANCH]]
 ###### lambdaLayer ######
 
   LambdaLayer:
