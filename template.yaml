@@ -48,13 +48,6 @@ Resources:
       FunctionName: !Join ['-',[ "helloworldchap", 'function', !Ref BRANCH ]]
       Handler: app.helloworld
       MemorySize: 3008
-      # Policies:
-      #   - S3CrudPolicy:
-      #       BucketName: !Ref ExampleS3
-      #   - DynamoDBCrudPolicy:
-      #       TableName: !Ref ExampleTable
-      #   - DynamoDBCrudPolicy:
-      #       TableName: !Ref ExampleSimpleTable
       Events:
         GetProduct:
           Type: Api 
