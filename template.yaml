@@ -72,10 +72,10 @@ Resources:
       AttributeDefinitions:
         - AttributeName: userId
           AttributeType: N 
-        - AttributeName: username
-          AttributeType: S
-        - AttributeName: date
-          AttributeType: N
+        # - AttributeName: username
+        #   AttributeType: S
+        # - AttributeName: date
+        #   AttributeType: N
       KeySchema:
         - AttributeName: userId
           KeyType: HASH
