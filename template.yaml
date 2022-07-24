@@ -62,7 +62,8 @@ Resources:
       FunctionName: !Join ['-',[ "signinchap", 'function', !Ref BRANCH ]]
       Handler: app.signIn
       MemorySize: 3008
-      - DynamoDBReadPolicy:
+      Policies:
+        - DynamoDBReadPolicy:
             TableName: !Ref UserTableChap
       Events:
         GetProduct:
@@ -78,7 +79,8 @@ Resources:
       FunctionName: !Join ['-',[ "signupchap", 'function', !Ref BRANCH ]]
       Handler: app.signUp
       MemorySize: 3008
-      - DynamoDBCrudPolicy:
+      Policies:
+        - DynamoDBCrudPolicy:
             TableName: !Ref UserTableChap
       Events:
         GetProduct:
