@@ -56,7 +56,37 @@ Resources:
             Method: get
             RestApiId: !Ref Endpoint
       
-      
+  SignIn:
+    Type: AWS::Serverless::Function 
+    Properties:
+      FunctionName: !Join ['-',[ "signinchap", 'function', !Ref BRANCH ]]
+      Handler: app.signIn
+      MemorySize: 3008
+      - DynamoDBReadPolicy:
+            TableName: !Ref UserTableChap
+      Events:
+        GetProduct:
+          Type: Api 
+          Properties:
+            Path: /signin
+            Method: get
+            RestApiId: !Ref Endpoint
+            
+  SignUp:
+    Type: AWS::Serverless::Function 
+    Properties:
+      FunctionName: !Join ['-',[ "signupchap", 'function', !Ref BRANCH ]]
+      Handler: app.signUp
+      MemorySize: 3008
+      - DynamoDBCrudPolicy:
+            TableName: !Ref UserTableChap
+      Events:
+        GetProduct:
+          Type: Api 
+          Properties:
+            Path: /signup
+            Method: post
+            RestApiId: !Ref Endpoint
       
   ###### dynamodb table #####
   UserTableChap:
@@ -64,7 +94,7 @@ Resources:
     Properties: 
       AttributeDefinitions:
         - AttributeName: userId
-          AttributeType: N 
+          AttributeType: S 
         # - AttributeName: username
         #   AttributeType: S
         # - AttributeName: date

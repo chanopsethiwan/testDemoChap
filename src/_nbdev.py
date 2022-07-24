@@ -3,10 +3,18 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"USERTABLENAME": "getEnv.ipynb",
-         "helloworld": "helloWorld.ipynb"}
+         "helloworld": "helloWorld.ipynb",
+         "hash_password": "saltHashPassword.ipynb",
+         "check_password": "saltHashPassword.ipynb",
+         "H": "signUp.ipynb",
+         "signUp": "signUp.ipynb",
+         "UserTable": "userTable.ipynb"}
 
 modules = ["getEnv.py",
            "helloworld.py",
+           "saltHashPassword.py",
+           "getUser.py",
+           "signUp.py",
            "userTable.py"]
 
 doc_url = "https://thanakijwanavit.github.io/src/"

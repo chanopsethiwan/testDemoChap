@@ -10,11 +10,14 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: get
+      title: CreateUser
       url: createUser.html
     - output: web,pdf
       title: GetEnv
       url: getEnv.html
+    - output: web,pdf
+      title: GetUser
+      url: getUser.html
     - output: web,pdf
       title: helloworld
       url: helloWorld.html
