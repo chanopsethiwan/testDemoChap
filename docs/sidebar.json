@@ -1,11 +1,12 @@
 {
   "src": {
     "Overview": "/",
-    "CreateUser": "createUser.html",
     "GetEnv": "getEnv.html",
-    "GetUser": "getUser.html",
     "helloworld": "helloWorld.html",
+    "Salt Hash Password": "saltHashPassword.html",
     "SetEnv": "setEnv.html",
+    "SignIn": "signIn.html",
+    "SignUp": "signUp.html",
     "UserTable": "userTable.html"
   }
 }

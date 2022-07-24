@@ -15,7 +15,7 @@ class UserTable(Model):
     class Meta:
         table_name = USERTABLENAME
         region = 'ap-southeast-1'
-    userId = NumberAttribute(hash_key=True)
+    userId = UnicodeAttribute(hash_key=True)
     username = UnicodeAttribute()
     date = NumberAttribute()
     passwordHash = UnicodeAttribute()
@@ -26,4 +26,5 @@ class UserTable(Model):
             'username': self.username,
             'date': self.date,
         }
-
+    def __repr__(self):
+        return f'{self.username}\n{self.passwordHash}'

@@ -10,20 +10,23 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: CreateUser
-      url: createUser.html
-    - output: web,pdf
       title: GetEnv
       url: getEnv.html
-    - output: web,pdf
-      title: GetUser
-      url: getUser.html
     - output: web,pdf
       title: helloworld
       url: helloWorld.html
     - output: web,pdf
+      title: Salt Hash Password
+      url: saltHashPassword.html
+    - output: web,pdf
       title: SetEnv
       url: setEnv.html
+    - output: web,pdf
+      title: SignIn
+      url: signIn.html
+    - output: web,pdf
+      title: SignUp
+      url: signUp.html
     - output: web,pdf
       title: UserTable
       url: userTable.html

@@ -6,6 +6,7 @@ index = {"USERTABLENAME": "getEnv.ipynb",
          "helloworld": "helloWorld.ipynb",
          "hash_password": "saltHashPassword.ipynb",
          "check_password": "saltHashPassword.ipynb",
+         "UserInput": "signUp.ipynb",
          "H": "signUp.ipynb",
          "signUp": "signUp.ipynb",
          "UserTable": "userTable.ipynb"}
