@@ -14,6 +14,7 @@ class UserTable(Model):
     """
     class Meta:
         table_name = USERTABLENAME
+        # table_name = 'usertablechap-test-master'
         region = 'ap-southeast-1'
     userId = UnicodeAttribute(hash_key=True)
     username = UnicodeAttribute()

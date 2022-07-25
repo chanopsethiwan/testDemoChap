@@ -7,3 +7,4 @@ import os
 
 # Cell
 USERTABLENAME = os.environ.get('USERTABLENAME')
+USERTABLENAME

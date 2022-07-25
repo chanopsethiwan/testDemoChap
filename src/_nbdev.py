@@ -14,6 +14,7 @@ index = {"USERTABLENAME": "getEnv.ipynb",
 modules = ["getEnv.py",
            "helloworld.py",
            "saltHashPassword.py",
+           "setEnv.py",
            "getUser.py",
            "signUp.py",
            "userTable.py"]

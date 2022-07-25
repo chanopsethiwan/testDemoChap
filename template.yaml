@@ -12,7 +12,7 @@ Globals:
       - !Ref LambdaLayer
     Environment:
       Variables:
-        USERTABLENAME: !Join ['-', ['usertable', 'test', !Ref BRANCH]]
+        USERTABLENAME: !Join ['-', ['usertablechap', 'test', !Ref BRANCH]]
         REGION: !Ref REGION
         BRANCH: !Ref BRANCH
       

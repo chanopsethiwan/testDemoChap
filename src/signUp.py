@@ -11,6 +11,7 @@ from uuid import uuid4
 from .saltHashPassword import hash_password, check_password
 from dataclasses import dataclass
 from dataclasses_json import dataclass_json
+from time import time
 
 # Cell
 @dataclass_json
@@ -23,18 +24,21 @@ class UserInput:
     def passwordHash(self):
         return hash_password(self.password)
 
-    def save(self):
-        UserTable(
-            userId = self.userId,
-            username = self.username,
-            date = self.date,
-            passwordHash = self.passwordHash
-        )
+    def saveTable(self):
+        passwordHashed = self.passwordHash
+        userTable = UserTable(
+                userId = str(uuid4()),
+                username = self.username,
+                date = time(),
+                passwordHash = passwordHashed
+            )
+        userTable.save()
 
 
 # Cell
 class H:
     class ParseInputError(Exception): pass
+    class SavingError(Exception): pass
     @staticmethod
     @beartype
     def parseInput(event:dict)->UserInput:
@@ -44,12 +48,24 @@ class H:
         except Exception as e:
             raise ParseInputError(e)
 
-
+    @classmethod
+    @beartype
+    def saveUserMethod(cls, user:UserInput)->bool:
+        try:
+            user.saveTable()
+            return True
+        except Exception as e:
+            raise cls.SavingError(e)
 
 
 
 # Cell
 def signUp(events, *args):
-    user = H.parseInput(event)
-    print(user)
-    return Response.returnSuccess()
+    try:
+        user = H.parseInput(event)
+        H.saveUserMethod(user)
+        return Response.returnSuccess()
+    except H.SavingError as e:
+        return Response.returnError(f'failed saving user {e}')
+    except Exception as e:
+        return Response.returnError(f' unknown error {e}')
