@@ -63,6 +63,7 @@ class H:
 def signUp(events, *args):
     try:
         user = H.parseInput(event)
+        print(user.username)
         H.saveUserMethod(user)
         return Response.returnSuccess()
     except H.SavingError as e:

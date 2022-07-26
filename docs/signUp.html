@@ -60,7 +60,7 @@ nb_path: "nbs/signUp.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;86daa96273f4957fcbfae83d4515c960436dec2fe9949c1ef787b6b2316bb6cd:e6f52be8e683430aa6a4ccb8ba4d4dcb&#39;</pre>
+<pre>&#39;f6055b9acd229f575c12a17eb31dd9e22cfbd5f1ffa60c9f1190b9d44549697d:162e28162b6a4b9e8b27b98f7a771801&#39;</pre>
 </div>
 
 </div>
@@ -143,6 +143,12 @@ nb_path: "nbs/signUp.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Main-Lambda-Handler">Main Lambda Handler<a class="anchor-link" href="#Main-Lambda-Handler"> </a></h2>
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -174,12 +180,6 @@ nb_path: "nbs/signUp.ipynb"
 </div>
     {% endraw %}
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Main-Lambda-Handler">Main Lambda Handler<a class="anchor-link" href="#Main-Lambda-Handler"> </a></h2>
-</div>
-</div>
-</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -218,7 +218,7 @@ nb_path: "nbs/signUp.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">input_</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;DelG&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;123&#39;</span><span class="p">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">input_</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;Delgg&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;1276&#39;</span><span class="p">}</span>
 <span class="n">event</span> <span class="o">=</span> <span class="n">Event</span><span class="o">.</span><span class="n">getInput</span><span class="p">(</span><span class="n">body</span> <span class="o">=</span> <span class="n">input_</span><span class="p">)</span>
 <span class="n">signUp</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
 </pre></div>
@@ -232,11 +232,19 @@ nb_path: "nbs/signUp.ipynb"
 
 <div class="output_area">
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Delgg
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;body&#39;: &#39;{&#34;error&#34;:&#34;failed saving user As of v1.0 PyanmoDB Models must have a table_name\\nModel: src.userTable.UserTable\\nSee https:\\/\\/pynamodb.readthedocs.io\\/en\\/latest\\/release_notes.html&#34;}&#39;,
- &#39;statusCode&#39;: 400,
+<pre>{&#39;body&#39;: &#39;{}&#39;,
+ &#39;statusCode&#39;: 200,
  &#39;headers&#39;: {&#39;Access-Control-Allow-Headers&#39;: &#39;*&#39;,
   &#39;Access-Control-Allow-Origin&#39;: &#39;*&#39;,
   &#39;Access-Control-Allow-Methods&#39;: &#39;*&#39;}}</pre>
