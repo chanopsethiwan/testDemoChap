@@ -17,7 +17,7 @@ modules = ["getEnv.py",
            "helloworld.py",
            "saltHashPassword.py",
            "setEnv.py",
-           "getUser.py",
+           "signIn.py",
            "signUp.py",
            "userTable.py"]
 
