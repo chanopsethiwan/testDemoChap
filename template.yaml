@@ -45,7 +45,7 @@ Resources:
   HelloWorldChap:
     Type: AWS::Serverless::Function 
     Properties:
-      FunctionName: !Join ['-',[ "helloworldchap", 'function', !Ref BRANCH ]]
+      FunctionName: !Join ['-',[ "helloworldchap1", 'function', !Ref BRANCH ]]
       Handler: app.helloworld
       MemorySize: 3008
       Events:
