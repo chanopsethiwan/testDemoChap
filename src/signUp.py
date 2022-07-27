@@ -60,7 +60,7 @@ class H:
 
 
 # Cell
-def signUp(events, *args):
+def signUp(event, *args):
     try:
         user = H.parseInput(event)
         print(user.username)
