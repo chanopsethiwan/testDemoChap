@@ -39,14 +39,14 @@ class UserInput:
 class H:
     class ParseInputError(Exception): pass
     class SavingError(Exception): pass
-    @staticmethod
+    @classmethod
     @beartype
-    def parseInput(event:dict)->UserInput:
+    def parseInput(cls, event:dict)->UserInput:
         try:
             user = Event.parseDataClass(UserInput, deepcopy(event))
             return user
         except Exception as e:
-            raise ParseInputError(e)
+            raise cls.ParseInputError(e)
 
     @classmethod
     @beartype
