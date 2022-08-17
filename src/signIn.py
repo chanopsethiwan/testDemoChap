@@ -18,31 +18,18 @@ class SignInInput:
     username: str
     password: str
 
-    @property
-    def passwordHash(self):
-        return hash_password(self.password)
-
-    def countUsername(self):
-        count = UserTable.username_index.count(self.username)
-        if count:
-            return True
-        else:
-            return False
-
     def checkPassword(self):
-        passwordHashed = self.passwordHash
         for item in UserTable.username_index.query(self.username):
-            if passwordHashed == item.passwordHash:
-                return True
-            else:
-                return False
+            return check_password(item.passwordHash, self.password)
 
 # Cell
 class H:
     class ParseInputError(Exception): pass
     class CountUsernameError(Exception): pass
-    class InvalidUsernameError(Exception): pass
+    class InvalidPasswordError(Exception): pass
     class PasswordCheckError(Exception): pass
+    class UsernameDoesNotExistError(Exception): pass
+
     @classmethod
     @beartype
     def parseInput(cls, event: dict)->SignInInput:
@@ -56,7 +43,7 @@ class H:
     @beartype
     def checkLoginDetails(cls, user:SignInInput):
         try:
-            count = user.countUsername
+            count = UserTable.username_index.count(user.username)
         except Exception as e:
             raise cls.CountUsernameError(e)
         if count:
@@ -67,7 +54,9 @@ class H:
             if passwordChecked:
                 return True
             else:
-                raise cls.InvalidUsernameError
+                raise cls.InvalidPasswordError
+        else:
+            raise cls.UsernameDoesNotExistError
 
 # Cell
 def signIn(event, *args):
@@ -79,9 +68,11 @@ def signIn(event, *args):
         return Response.returnError(f'failed to parse input {e}')
     except H.CountUsernameError as e:
         return Response.returnError(f'failed to count number of user with specified username {e}')
-    except H.InvalidUsernameError as e:
-        return Response.returnError(f'incorrect username or password {e}')
+    except H.InvalidPasswordError as e:
+        return Response.returnError(f'incorrect password {e}')
     except H.PasswordCheckError as e:
         return Response.returnError(f'failed to check username and password {e}')
+    except H.UsernameDoesNotExistError as e:
+        return Response.returnError(f'username does not exist or is incorrect {e}')
     except Exception as e:
         return Response.returnError(f' unknown error {e}')

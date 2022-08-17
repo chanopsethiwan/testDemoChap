@@ -42,6 +42,8 @@ class UserInput:
 class H:
     class ParseInputError(Exception): pass
     class SavingError(Exception): pass
+    class CountUsernameError(Exception): pass
+    class UsernameAlreadyExistError(Exception): pass
     @classmethod
     @beartype
     def parseInput(cls, event:dict)->UserInput:
@@ -55,10 +57,17 @@ class H:
     @beartype
     def saveUserMethod(cls, user:UserInput)->bool:
         try:
-            user.saveTable()
-            return True
+            count = UserTable.username_index.count(user.username)
         except Exception as e:
-            raise cls.SavingError(e)
+            raise cls.CountUsernameError(e)
+        if not count:
+            try:
+                user.saveTable()
+                return True
+            except Exception as e:
+                raise cls.SavingError(e)
+        else:
+            raise cls.UsernameAlreadyExistError
 
 
 
@@ -72,5 +81,9 @@ def signUp(event, *args):
         return Response.returnError(f'failed to parse input {e}')
     except H.SavingError as e:
         return Response.returnError(f'failed saving user {e}')
+    except H.CountUsernameError as e:
+        return Response.returnError(f'failed to count number of user {e}')
+    except H.UsernameAlreadyExistError as e:
+        return Response.returnError(f'username already exist {e}')
     except Exception as e:
         return Response.returnError(f' unknown error {e}')
