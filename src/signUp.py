@@ -12,6 +12,7 @@ from .saltHashPassword import hash_password, check_password
 from dataclasses import dataclass
 from dataclasses_json import dataclass_json
 from time import time
+import json
 
 # Cell
 @dataclass_json
@@ -19,6 +20,7 @@ from time import time
 class UserInput:
     username: str
     password: str
+    email: str
 
     @property
     def passwordHash(self):
@@ -30,7 +32,8 @@ class UserInput:
                 userId = str(uuid4()),
                 username = self.username,
                 date = time(),
-                passwordHash = passwordHashed
+                passwordHash = passwordHashed,
+                email = self.email
             )
         userTable.save()
 
@@ -63,9 +66,10 @@ class H:
 def signUp(event, *args):
     try:
         user = H.parseInput(event)
-        print(user.username)
         H.saveUserMethod(user)
         return Response.returnSuccess()
+    except H.ParseInputError as e:
+        return Response.returnError(f'failed to parse input {e}')
     except H.SavingError as e:
         return Response.returnError(f'failed saving user {e}')
     except Exception as e:

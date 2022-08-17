@@ -11,6 +11,7 @@ index = {"USERTABLENAME": "getEnv.ipynb",
          "signIn": "signIn.ipynb",
          "UserInput": "signUp.ipynb",
          "signUp": "signUp.ipynb",
+         "UsernameIndex": "userTable.ipynb",
          "UserTable": "userTable.ipynb"}
 
 modules = ["getEnv.py",
