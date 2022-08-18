@@ -89,6 +89,23 @@ Resources:
             Path: /signup
             Method: post
             RestApiId: !Ref Endpoint
+            
+    ChangePassword:
+    Type: AWS::Serverless::Function 
+    Properties:
+      FunctionName: !Join ['-',[ "changepasswordchap", 'function', !Ref BRANCH ]]
+      Handler: app.changePassword
+      MemorySize: 3008
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref UserTableChap
+      Events:
+        GetProduct:
+          Type: Api 
+          Properties:
+            Path: /changepassword
+            Method: post
+            RestApiId: !Ref Endpoint
       
   ###### dynamodb table #####
   UserTableChap:

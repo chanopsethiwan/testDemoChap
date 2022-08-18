@@ -10,6 +10,9 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
+      title: Title
+      url: changePassword.html
+    - output: web,pdf
       title: GetEnv
       url: getEnv.html
     - output: web,pdf
