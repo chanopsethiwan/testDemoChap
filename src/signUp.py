@@ -95,7 +95,7 @@ def signUp(event, *args):
     except H.UsernameAlreadyExistError as e:
         return Response.returnError(f'username already exist {e}')
     except H.CountEmailError as e:
-        return Response.returnError(f'failed to count number of emails {e}')
+        return Response.returnError(f'failed to count number of email {e}')
     except H.EmailAlreadyExistError as e:
         return Response.returnError(f'email already exist {e}')
     except Exception as e:
