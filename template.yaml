@@ -116,8 +116,8 @@ Resources:
           AttributeType: S 
         - AttributeName: username
           AttributeType: S
-        # - AttributeName: date
-        #   AttributeType: N
+        - AttributeName: email
+          AttributeType: N
       KeySchema:
         - AttributeName: userId
           KeyType: HASH
@@ -125,6 +125,12 @@ Resources:
         - IndexName: username
           KeySchema:
             - AttributeName: username
+              KeyType: HASH
+          Projection:
+            ProjectionType: ALL
+        - IndexName: email
+          KeySchema:
+            - AttributeName: email
               KeyType: HASH
           Projection:
             ProjectionType: ALL

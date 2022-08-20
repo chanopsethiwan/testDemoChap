@@ -191,7 +191,7 @@ nb_path: "nbs/signUp.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="signUp" class="doc_header"><code>signUp</code><a href="https://github.com/thanakijwanavit/src/tree/main/src/signUp.py#L75" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>signUp</code>(<strong><code>event</code></strong>, <strong>*<code>args</code></strong>)</p>
+<h4 id="signUp" class="doc_header"><code>signUp</code><a href="https://github.com/thanakijwanavit/src/tree/main/src/signUp.py#L84" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>signUp</code>(<strong><code>event</code></strong>, <strong>*<code>args</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -218,7 +218,7 @@ nb_path: "nbs/signUp.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">input_</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;Delg45&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;12765&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="s1">&#39;chanopsethiwan233@gmail.com&#39;</span><span class="p">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">input_</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;Delg456&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;12765&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="s1">&#39;chanopsethiwan233@gmail.com&#39;</span><span class="p">}</span>
 <span class="n">event</span> <span class="o">=</span> <span class="n">Event</span><span class="o">.</span><span class="n">getInput</span><span class="p">(</span><span class="n">body</span> <span class="o">=</span> <span class="n">input_</span><span class="p">)</span>
 <span class="n">signUp</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
 </pre></div>
@@ -235,8 +235,8 @@ nb_path: "nbs/signUp.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;body&#39;: &#39;{}&#39;,
- &#39;statusCode&#39;: 200,
+<pre>{&#39;body&#39;: &#39;{&#34;error&#34;:&#34;failed to count number of emails type object \&#39;UserTable\&#39; has no attribute \&#39;email_index\&#39;&#34;}&#39;,
+ &#39;statusCode&#39;: 400,
  &#39;headers&#39;: {&#39;Access-Control-Allow-Headers&#39;: &#39;*&#39;,
   &#39;Access-Control-Allow-Origin&#39;: &#39;*&#39;,
   &#39;Access-Control-Allow-Methods&#39;: &#39;*&#39;}}</pre>

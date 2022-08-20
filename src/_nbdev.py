@@ -14,6 +14,7 @@ index = {"ChangePasswordInput": "changePassword.ipynb",
          "UserInput": "signUp.ipynb",
          "signUp": "signUp.ipynb",
          "UsernameIndex": "userTable.ipynb",
+         "EmailIndex": "userTable.ipynb",
          "UserTable": "userTable.ipynb"}
 
 modules = ["changePassword.py",

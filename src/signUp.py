@@ -44,6 +44,8 @@ class H:
     class SavingError(Exception): pass
     class CountUsernameError(Exception): pass
     class UsernameAlreadyExistError(Exception): pass
+    class CountEmailError(Exception):pass
+    class EmailAlreadyExistError(Exception):pass
     @classmethod
     @beartype
     def parseInput(cls, event:dict)->UserInput:
@@ -60,12 +62,19 @@ class H:
             count = UserTable.username_index.count(user.username)
         except Exception as e:
             raise cls.CountUsernameError(e)
+        try:
+            countEmail = UserTable.email_index.count(user.email)
+        except Exception as e:
+            raise cls.CountEmailError(e)
         if not count:
-            try:
-                user.saveTable()
-                return True
-            except Exception as e:
-                raise cls.SavingError(e)
+            if not countEmail:
+                try:
+                    user.saveTable()
+                    return True
+                except Exception as e:
+                    raise cls.SavingError(e)
+            else:
+                raise cls.EmailAlreadyExistError
         else:
             raise cls.UsernameAlreadyExistError
 
@@ -85,5 +94,9 @@ def signUp(event, *args):
         return Response.returnError(f'failed to count number of user {e}')
     except H.UsernameAlreadyExistError as e:
         return Response.returnError(f'username already exist {e}')
+    except H.CountEmailError as e:
+        return Response.returnError(f'failed to count number of emails {e}')
+    except H.EmailAlreadyExistError as e:
+        return Response.returnError(f'email already exist {e}')
     except Exception as e:
         return Response.returnError(f' unknown error {e}')
