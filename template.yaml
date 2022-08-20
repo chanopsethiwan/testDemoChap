@@ -117,7 +117,7 @@ Resources:
         - AttributeName: username
           AttributeType: S
         - AttributeName: email
-          AttributeType: N
+          AttributeType: S
       KeySchema:
         - AttributeName: userId
           KeyType: HASH
