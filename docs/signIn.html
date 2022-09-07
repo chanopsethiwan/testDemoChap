@@ -289,6 +289,45 @@ nb_path: "nbs/signIn.ipynb"
 </div>
     {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://3d4v07deqh.execute-api.ap-southeast-1.amazonaws.com/Prod/signin&#39;</span>
+<span class="n">url2</span> <span class="o">=</span> <span class="s1">&#39;https://sje65cwtekbnrn7w3l66djb2fi0lvmkt.lambda-url.ap-southeast-1.on.aws&#39;</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;Delgg4&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;12765&#39;</span><span class="p">}</span>
+<span class="c1"># headers = {&#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36&#39;, &quot;Upgrade-Insecure-Requests&quot;: &quot;1&quot;,&quot;DNT&quot;: &quot;1&quot;,&quot;Accept&quot;: &quot;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&quot;,&quot;Accept-Language&quot;: &quot;en-US,en;q=0.5&quot;,&quot;Accept-Encoding&quot;: &quot;gzip, deflate&quot;}</span>
+<span class="n">paramsGetInput</span> <span class="o">=</span> <span class="n">Event</span><span class="o">.</span><span class="n">getInput</span><span class="p">(</span><span class="n">body</span> <span class="o">=</span> <span class="n">params</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url2</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#34;error&#34;:&#34;failed to parse input &#39;body&#39;&#34;}
+400
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
 </div>
  
 

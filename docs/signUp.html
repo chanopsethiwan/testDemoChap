@@ -60,7 +60,7 @@ nb_path: "nbs/signUp.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;41c1b5462d6837b47873309e4c73d44958c826a58911c3520104278a6a958e2f:64a7e2e101be4924bdf78975555752c7&#39;</pre>
+<pre>&#39;0547b2f5f51a527117ecdfef68b5409fc3fda174d8c47d93bcdd4d67aa6c0d83:51b1558fc1fe46f180498dd98cd98d07&#39;</pre>
 </div>
 
 </div>
@@ -218,7 +218,7 @@ nb_path: "nbs/signUp.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">input_</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;Delg456&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;12765&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="s1">&#39;chanopsethiwan233@gmail.com&#39;</span><span class="p">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">input_</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;Delg45678&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;12764&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="s1">&#39;chanopsethiwan20@gmail.com&#39;</span><span class="p">}</span>
 <span class="n">event</span> <span class="o">=</span> <span class="n">Event</span><span class="o">.</span><span class="n">getInput</span><span class="p">(</span><span class="n">body</span> <span class="o">=</span> <span class="n">input_</span><span class="p">)</span>
 <span class="n">signUp</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
 </pre></div>
@@ -235,8 +235,8 @@ nb_path: "nbs/signUp.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;body&#39;: &#39;{&#34;error&#34;:&#34;failed to count number of emails Failed to query items: An error occurred (ValidationException) on request (AKSK9UDIBCDLR5VM7NQ636R64FVV4KQNSO5AEMVJF66Q9ASUAAJG) on table (usertablechap-test-master) when calling the Query operation: ExpressionAttributeValues contains invalid value: The parameter cannot be converted to a numeric value: chanopsethiwan233@gmail.com for key :0&#34;}&#39;,
- &#39;statusCode&#39;: 400,
+<pre>{&#39;body&#39;: &#39;{}&#39;,
+ &#39;statusCode&#39;: 200,
  &#39;headers&#39;: {&#39;Access-Control-Allow-Headers&#39;: &#39;*&#39;,
   &#39;Access-Control-Allow-Origin&#39;: &#39;*&#39;,
   &#39;Access-Control-Allow-Methods&#39;: &#39;*&#39;}}</pre>
@@ -273,7 +273,7 @@ nb_path: "nbs/signUp.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>1660994727.5275362</pre>
+<pre>1662460127.619107</pre>
 </div>
 
 </div>
@@ -374,6 +374,42 @@ nb_path: "nbs/signUp.ipynb"
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>True
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://3d4v07deqh.execute-api.ap-southeast-1.amazonaws.com/Prod/signup&#39;</span>
+<span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;delg&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;abcd&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span><span class="s1">&#39;sajkdsfdjka&#39;</span> <span class="p">}</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">body</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>403
+{&#34;message&#34;:&#34;Missing Authentication Token&#34;}
 </pre>
 </div>
 </div>

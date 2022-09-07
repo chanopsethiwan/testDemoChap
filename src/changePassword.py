@@ -15,7 +15,9 @@ from beartype import beartype
 @dataclass_json
 @dataclass
 class ChangePasswordInput:
-    userId: str
+    #change to username
+    # userId: str
+    username: str
     oldPassword: str
     newPassword: str
     newPasswordRepeated: str
@@ -25,7 +27,7 @@ class ChangePasswordInput:
         return hash_password(self.newPassword)
 
     def checkPassword(self):
-        for item in UserTable.query(self.userId):
+        for item in UserTable.username_index.query(self.username):
             return check_password(item.passwordHash, self.oldPassword)
 
 
