@@ -328,6 +328,42 @@ nb_path: "nbs/signIn.ipynb"
 </div>
     {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">item</span> <span class="o">=</span> <span class="n">UserTable</span><span class="o">.</span><span class="n">username_index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Delg45678&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">item</span><span class="p">:</span>
+    
+    <span class="n">passwordHash</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">userId</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">passwordHash</span><span class="p">)</span>
+    
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>15fdac0b-6f83-4726-a2b6-ac825ff6e57e
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
 </div>
  
 

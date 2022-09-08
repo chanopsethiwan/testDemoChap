@@ -69,9 +69,12 @@ class H:
         except Exception as e:
             raise cls.HashPasswordError(e)
         try:
-            oldItem = UserTable.get(user.userId)
-            oldItem.passwordHash = newPasswordHashed
-            oldItem.save()
+            usernameQuery = UserTable.username_index.query(user.username)
+            for i in usernameQuery:
+                userId = i.userId
+                oldItem = UserTable.get(userId)
+                oldItem.passwordHash = newPasswordHashed
+                oldItem.save()
         except Exception as e:
             raise cls.ChangePasswordError(e)
         return True
