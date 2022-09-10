@@ -90,10 +90,10 @@ Resources:
             Method: post
             RestApiId: !Ref Endpoint
             
-  ChangePassword1:
+  ChangePassword:
     Type: AWS::Serverless::Function 
     Properties:
-      FunctionName: !Join ['-',[ "changepasswordchap1", 'function', !Ref BRANCH ]]
+      FunctionName: !Join ['-',[ "changepasswordchap", 'function', !Ref BRANCH ]]
       Handler: app.changePassword
       MemorySize: 3008
       Policies:
