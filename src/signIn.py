@@ -34,7 +34,8 @@ class H:
     @beartype
     def parseInput(cls, event: dict)->SignInInput:
         try:
-            user = Event.parseDataClass(SignInInput, deepcopy(event))
+            params = Event.parseQuery(event)
+            user = SignInInput.from_dict(params)
             return user
         except Exception as e:
             raise cls.ParseInputError(e)
