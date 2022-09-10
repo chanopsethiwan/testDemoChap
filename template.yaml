@@ -90,7 +90,7 @@ Resources:
             Method: post
             RestApiId: !Ref Endpoint
             
-    ChangePassword:
+  ChangePassword:
     Type: AWS::Serverless::Function 
     Properties:
       FunctionName: !Join ['-',[ "changepasswordchap", 'function', !Ref BRANCH ]]
