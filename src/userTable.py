@@ -43,9 +43,9 @@ class UserTable(Model):
     date = NumberAttribute()
     passwordHash = UnicodeAttribute()
     email = UnicodeAttribute()
-    fullname = UnicodeAttribute()
-    nickname = UnicodeAttribute()
-    levelOfStudy = UnicodeAttribute()
+    fullname = UnicodeAttribute(null=True)
+    nickname = UnicodeAttribute(null=True)
+    levelOfStudy = UnicodeAttribute(null=True)
     username_index = UsernameIndex()
     email_index = EmailIndex()
 

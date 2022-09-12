@@ -1,7 +1,7 @@
 {
   "src": {
     "Overview": "/",
-    "Title": "changePassword.html",
+    "Title": "getStarted.html",
     "GetEnv": "getEnv.html",
     "helloworld": "helloWorld.html",
     "Salt Hash Password": "saltHashPassword.html",
