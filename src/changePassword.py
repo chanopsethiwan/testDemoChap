@@ -20,7 +20,7 @@ class ChangePasswordInput:
     username: str
     oldPassword: str
     newPassword: str
-    newPasswordRepeated: str
+    # newPasswordRepeated: str
 
     @property
     def passwordHash(self):
@@ -36,7 +36,7 @@ class H:
     class ParseInputError(Exception): pass
     class PasswordCheckError(Exception): pass
     class InvalidPasswordError(Exception): pass
-    class IncorrectRepeatedPasswordError(Exception): pass
+    # class IncorrectRepeatedPasswordError(Exception): pass
     class HashPasswordError(Exception): pass
     class ChangePasswordError(Exception): pass
 
@@ -60,10 +60,10 @@ class H:
             pass
         else:
             raise cls.InvalidPasswordError
-        if user.newPassword == user.newPasswordRepeated:
-            pass
-        else:
-            raise cls.IncorrectRepeatedPasswordError()
+        # if user.newPassword == user.newPasswordRepeated:
+        #     pass
+        # else:
+        #     raise cls.IncorrectRepeatedPasswordError()
         try:
             newPasswordHashed = hash_password(user.newPassword)
         except Exception as e:
@@ -91,8 +91,8 @@ def changePassword(event, *args):
         return Response.returnError(f'failed to check password {e}')
     except H.InvalidPasswordError as e:
         return Response.returnError(f'incorrect old password inputted {e}')
-    except H.IncorrectRepeatedPasswordError as e:
-        return Response.returnError(f'new password does not match repeated new password {e}')
+    # except H.IncorrectRepeatedPasswordError as e:
+    #     return Response.returnError(f'new password does not match repeated new password {e}')
     except H.HashPasswordError as e:
         return Response.returnError(f'failed to hash password {e}')
     except H.ChangePasswordError as e:
