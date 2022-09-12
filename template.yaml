@@ -123,6 +123,24 @@ Resources:
             Path: /changeemail
             Method: post
             RestApiId: !Ref Endpoint
+            
+  GetStarted:
+    Type: AWS::Serverless::Function 
+    Properties:
+      FunctionName: !Join ['-',[ "getstartedchap", 'function', !Ref BRANCH ]]
+      Handler: app.getStarted
+      MemorySize: 3008
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref UserTableChap
+      Events:
+        GetProduct:
+          Type: Api 
+          Properties:
+            Path: /getstarted
+            Method: post
+            RestApiId: !Ref Endpoint
+            
   ###### dynamodb table #####
   UserTableChap:
     Type: AWS::DynamoDB::Table

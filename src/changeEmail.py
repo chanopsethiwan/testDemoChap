@@ -25,7 +25,7 @@ class ChangeEmailInput:
 
     def checkPassword(self):
         for item in UserTable.username_index.query(self.username):
-            return check_password(item.passwordHash, self.oldPassword)
+            return check_password(item.passwordHash, self.password)
 
 # Cell
 class H:
