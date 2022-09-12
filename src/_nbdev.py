@@ -2,8 +2,10 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"ChangePasswordInput": "changePassword.ipynb",
+index = {"ChangeEmailInput": "changeEmail.ipynb",
          "H": "signUp.ipynb",
+         "changeEmail": "changeEmail.ipynb",
+         "ChangePasswordInput": "changePassword.ipynb",
          "changePassword": "changePassword.ipynb",
          "USERTABLENAME": "getEnv.ipynb",
          "helloworld": "helloWorld.ipynb",
@@ -17,7 +19,8 @@ index = {"ChangePasswordInput": "changePassword.ipynb",
          "EmailIndex": "userTable.ipynb",
          "UserTable": "userTable.ipynb"}
 
-modules = ["changePassword.py",
+modules = ["changeEmail.py",
+           "changePassword.py",
            "getEnv.py",
            "helloworld.py",
            "saltHashPassword.py",

@@ -107,6 +107,22 @@ Resources:
             Method: post
             RestApiId: !Ref Endpoint
       
+  ChangeEmail:
+    Type: AWS::Serverless::Function 
+    Properties:
+      FunctionName: !Join ['-',[ "changeemailchap", 'function', !Ref BRANCH ]]
+      Handler: app.changeEmail
+      MemorySize: 3008
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref UserTableChap
+      Events:
+        GetProduct:
+          Type: Api 
+          Properties:
+            Path: /changeemail
+            Method: post
+            RestApiId: !Ref Endpoint
   ###### dynamodb table #####
   UserTableChap:
     Type: AWS::DynamoDB::Table
