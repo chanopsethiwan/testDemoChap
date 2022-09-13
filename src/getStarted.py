@@ -49,7 +49,15 @@ class H:
                 oldItem.save()
         except Exception as e:
             raise cls.GetStartedError(e)
+        return True
 
 # Cell
 def getStarted(event, *args):
-    pass
+    try:
+        user = H.parseInput(event)
+        H.getStartedInfo(user)
+        return Response.returnSuccess()
+    except H.ParseInputError as e:
+        return Response.returnError(f'failed to parse input {e}')
+    except H.GetStartedError as e:
+        return Response.returnError(f'failed to save get started information {e}')
