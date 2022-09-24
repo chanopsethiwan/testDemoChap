@@ -141,6 +141,23 @@ Resources:
             Method: post
             RestApiId: !Ref Endpoint
             
+  GetLevelOfStudy:
+    Type: AWS::Serverless::Function 
+    Properties:
+      FunctionName: !Join ['-',[ "getlevelofstudychap", 'function', !Ref BRANCH ]]
+      Handler: app.getLevelOfStudy
+      MemorySize: 3008
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref UserTableChap
+      Events:
+        GetProduct:
+          Type: Api 
+          Properties:
+            Path: /getlevelofstudy
+            Method: get
+            RestApiId: !Ref Endpoint
+            
   ###### dynamodb table #####
   UserTableChap:
     Type: AWS::DynamoDB::Table

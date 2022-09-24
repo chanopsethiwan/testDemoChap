@@ -48,7 +48,7 @@ class H:
                 oldItem.levelOfStudy = user.levelOfStudy
                 oldItem.save()
         except Exception as e:
-            raise cls.GetStartedError(e)
+            raise cls.GetStartedError
         return True
 
 # Cell

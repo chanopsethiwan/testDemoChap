@@ -12,6 +12,7 @@ from .saltHashPassword import hash_password, check_password
 from dataclasses import dataclass
 from dataclasses_json import dataclass_json
 from time import time
+from functools import cached_property
 import json
 
 # Cell
@@ -22,7 +23,7 @@ class UserInput:
     password: str
     email: str
 
-    @property
+    @cached_property
     def passwordHash(self):
         return hash_password(self.password)
 
@@ -59,24 +60,23 @@ class H:
     @beartype
     def saveUserMethod(cls, user:UserInput)->bool:
         try:
-            count = UserTable.username_index.count(user.username)
+            usernameExist = UserTable.username_index.count(user.username) > 0
         except Exception as e:
             raise cls.CountUsernameError(e)
         try:
-            countEmail = UserTable.email_index.count(user.email)
+            emailExist = UserTable.email_index.count(user.email) > 0
         except Exception as e:
             raise cls.CountEmailError(e)
-        if not count:
-            if not countEmail:
-                try:
-                    user.saveTable()
-                    return True
-                except Exception as e:
-                    raise cls.SavingError(e)
-            else:
-                raise cls.EmailAlreadyExistError
-        else:
-            raise cls.UsernameAlreadyExistError
+
+        if usernameExist: raise cls.UsernameAlreadyExistError
+        if emailExist: raise cls.EmailAlreadyExistError
+
+        try:
+            user.saveTable()
+            return True
+        except Exception as e:
+            raise cls.SavingError(e)
+
 
 
 
